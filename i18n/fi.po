@@ -1,0 +1,72 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_bank_statement_import_op
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-05 16:26+0000\n"
+"PO-Revision-Date: 2015-01-05 18:29+0200\n"
+"Last-Translator: Miku Laitinen <miku.laitinen@ninjaware.fi>\n"
+"Language-Team: Avoin.Systems <miku@avoin.systems>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: Finnish\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#. module: account_bank_statement_import_op
+#: code:addons/account_bank_statement_import_op/account_bank_statement_import_op.py:110
+#, python-format
+msgid "CSV column headers invalid. Possible values: "
+msgstr "CSV-sarakkeiden otsikot ovat virheelliset. Mahdolliset arvot:"
+
+#. module: account_bank_statement_import_op
+#: code:addons/account_bank_statement_import_op/account_bank_statement_import_op.py:143
+#, python-format
+msgid "Error!"
+msgstr "Virhe"
+
+#. module: account_bank_statement_import_op
+#: code:addons/account_bank_statement_import_op/account_bank_statement_import_op.py:143
+#, python-format
+msgid ""
+"Following problem has been occurred while importing your file, Please make "
+"sure the file is valid.\n"
+"\n"
+" {}"
+msgstr ""
+"Ongelma on havaittu tiedostoa tuotaessa. Ole hyvä ja tarkista tiedoston "
+"oikeellisuus.\n"
+"\n"
+" {}"
+
+#. module: account_bank_statement_import_op
+#: model:ir.model,name:account_bank_statement_import_op.model_account_bank_statement_import
+msgid "Import Bank Statement"
+msgstr "Tuo tiliote"
+
+#. module: account_bank_statement_import_op
+#: code:addons/account_bank_statement_import_op/account_bank_statement_import_op.py:101
+#: code:addons/account_bank_statement_import_op/account_bank_statement_import_op.py:110
+#, python-format
+msgid "Import Error!"
+msgstr "Tuontivirhe"
+
+#. module: account_bank_statement_import_op
+#: field:account.bank.statement.import,name:0
+msgid "Name"
+msgstr "Nimi"
+
+#. module: account_bank_statement_import_op
+#: code:addons/account_bank_statement_import_op/account_bank_statement_import_op.py:101
+#, python-format
+msgid "Please make sure the file format is CSV."
+msgstr "Ole hyvä ja tarkista tiedoston sisältö ja formaatti."
+
+#. module: account_bank_statement_import_op
+#: field:account.bank.statement.import,balance_start:0
+msgid "Starting Balance"
+msgstr "Alkusaldo"

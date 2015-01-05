@@ -1,0 +1,22 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Debug" type="PythonConfigurationType" factoryName="Python" singleton="true">
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <envs>
+      <env name="PYTHONUNBUFFERED" value="1" />
+    </envs>
+    <option name="SDK_HOME" value="$PROJECT_DIR$/../../env_odoo8/bin/python2.7" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../odoo" />
+    <option name="IS_MODULE_SDK" value="false" />
+    <option name="ADD_CONTENT_ROOTS" value="true" />
+    <option name="ADD_SOURCE_ROOTS" value="true" />
+    <module name="account_bank_statement_import_op" />
+    <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../odoo/odoo.py" />
+    <option name="PARAMETERS" value="--addons-path=$PROJECT_DIR$/../../nw_addons8,$PROJECT_DIR$/../../odoo/addons --log-level=debug --update=account_bank_statement_import_op --debug --database=dev8" />
+    <option name="SHOW_COMMAND_LINE" value="false" />
+    <RunnerSettings RunnerId="PyDebugRunner" />
+    <ConfigurationWrapper RunnerId="PyDebugRunner" />
+    <method />
+  </configuration>
+</component>
