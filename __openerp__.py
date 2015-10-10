@@ -1,6 +1,6 @@
 {
     'name': 'Import Osuuspankki Bank Statement',
-    'version': '1.0',
+    'version': '2.0.0',
     'author': 'Avoin.Systems',
     'depends': ['account_bank_statement_import'],
     'category': 'Accounting',
