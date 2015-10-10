@@ -134,7 +134,7 @@ class AccountBankStatementImport(models.TransientModel):
                 )
 
                 vals_line = {
-                    'unique_import_id': transaction.id,
+                    'unique_import_id': transaction.id + str(transaction.date),
                     'date': transaction.date,
                     'name': transaction.name,
                     'ref': transaction.ref,
