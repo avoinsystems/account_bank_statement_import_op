@@ -10,6 +10,9 @@
                     <field name="journal_id" position="after">
                         <label for="balance_start"/>
                         <field name="balance_start"/>
+
+                        <label for="bank_statement_date"/>
+                        <field name="bank_statement_date"/>
                     </field>
                 </data>
             </field>
