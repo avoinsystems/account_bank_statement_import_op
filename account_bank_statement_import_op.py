@@ -79,6 +79,13 @@ class AccountBankStatementImport(models.TransientModel):
         digits_compute=dp.get_precision('Account')
     )
 
+    bank_statement_date = fields.Date(
+        'Bank Statement Date',
+        help="You can choose to manually set the bank statement date here. "
+             "Otherwise the bank statement date will be read from the latest "
+             "bank statement line.",
+    )
+
     @api.model
     def _check_osuuspankki(self):
         # noinspection PyBroadException
@@ -115,6 +122,8 @@ class AccountBankStatementImport(models.TransientModel):
 
         transactions = []
         total_amt = 0.00
+        min_date = max_date = False
+        index = 0
 
         header = ';'.join(next(reader, None))
         if header not in SIGNATURE:
@@ -133,8 +142,17 @@ class AccountBankStatementImport(models.TransientModel):
                     transaction.bank_account
                 )
 
+                if not min_date or transaction.date < min_date:
+                    min_date = transaction.date
+                if not max_date or transaction.date < max_date:
+                    max_date = transaction.date
+
+                # Transaction ID is not unique, transaction ID with date is
+                # not unique. Let's hope that transaction ID, date and index
+                # is.
+                import_id = transaction.id + str(transaction.date) + str(index)
                 vals_line = {
-                    'unique_import_id': transaction.id + str(transaction.date),
+                    'unique_import_id': import_id,
                     'date': transaction.date,
                     'name': transaction.name,
                     'ref': transaction.ref,
@@ -145,6 +163,7 @@ class AccountBankStatementImport(models.TransientModel):
 
                 total_amt += float(transaction.amount)
                 transactions.append(vals_line)
+                index += 1
         except Exception, e:
             raise ValidationError(
                 _(u"Following problem has been occurred while importing "
@@ -155,6 +174,8 @@ class AccountBankStatementImport(models.TransientModel):
         vals_bank_statement = {
             'balance_start': self.balance_start,
             'balance_end_real': self.balance_start + total_amt,
+            'date': self.bank_statement_date
+            if self.bank_statement_date else max_date,
             'transactions': transactions
         }
 
